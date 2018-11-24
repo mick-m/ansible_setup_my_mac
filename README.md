@@ -26,15 +26,21 @@ run `./deploy.sh` to first install dependencies (Brew, CL tools, Xcode, pip, and
 
 When above is complete, you can run this Playbook:
 - Place it in your roles directory - e.g. `~/.ansible/roles/`
-- Then from `~/.ansible/roles/ansible_setup_my_mac/`, run `$ ansible-playbook site.yml`
+- Then from `~/.ansible/roles/ansible_setup_my_mac/`, run `$ ansible-playbook main.yml`
 
-`site.yml` (configured to be run locally & to ignore errors for subsequent re-runs - e.g. package already exists):
+`main.yml` (configured to be run locally & to ignore errors for subsequent re-runs - e.g. package already exists):
 ```
-     ---
-     - hosts: 127.0.0.1
-       ignore_errors: yes
-       roles:
-         - ansible_setup_my_mac
+---
+- hosts: localhost
+  ignore_errors: yes
+  user: mick
+  connection: local
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - ansible_setup_my_mac
 ```
 License
 -------

@@ -1,19 +1,5 @@
 ---
 - name: Install my favourite brew cask packages
   homebrew_cask:
-    name: ["{{ item }}"]
+    name: "{{ homebrew_cask_apps }}"
     state: latest
-  with_items:
-    - atom
-    - caffeine
-    - dropbox
-    - etcher
-    - evernote
-    - iterm2
-    - keepassx
-    - slack
-    - slate
-    - transmission
-    - visual-studio-code
-    - vivaldi
-    - vlc

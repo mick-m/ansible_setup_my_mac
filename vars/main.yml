@@ -1,2 +1,72 @@
 ---
 # vars file for ansible_setup_my_mac
+
+homebrew_packages:
+  - bash-completion
+  - calc
+  - colordiff
+  - dockutil
+  - emacs-mac
+  - gpg
+  - hh
+  - htop
+  - nmap
+  - speedtest-cli
+  - tig
+  - tree
+  - unrar
+  - vimpager
+  - wget
+
+homebrew_cask_apps:
+  - atom
+  - caffeine
+  - dropbox
+  - etcher
+  - evernote
+  - iterm2
+  - keepassx
+  - slack
+  - slate
+  - transmission
+  - visual-studio-code
+  - vivaldi
+  - vlc
+
+dockitems_to_remove:
+  - Launchpad
+  - Mail
+  - Safari
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - iTunes
+  - iBooks
+  - App Store
+  - System Preferences
+  - Calendar
+  - Siri
+
+dockitems_to_persist:
+  - name: Mail
+    path: "/Applications/Mail.app"
+    pos: 1
+  - name: Atom
+    path: "/Applications/Atom.app"
+    pos: 2
+  - name: Visual Studio Code
+    path: "/Applications/Visual Studio Code.app"
+    pos: 3
+  - name: Vivaldi
+    path: /Applications/Vivaldi.app
+    pos: 4
+  - name: iTerm
+    path: /Applications/iTerm.app
+    pos: 5
+  - name: Slack
+    path: /Applications/Slack.app
+    pos: 6

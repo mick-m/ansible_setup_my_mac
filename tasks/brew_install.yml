@@ -9,25 +9,8 @@
 - name: Install my favourite packages via Homebrew
   homebrew:
     update_homebrew: yes
-    name: ["{{ item }}"]
+    name: "{{ homebrew_packages }}"
     state: latest
-  with_items:
-    - bash-completion
-    - calc
-    - colordiff
-    - dockutil
-    - emacs-mac
-    - gpg
-    - hh
-    - htop
-    - nmap
-    - speedtest-cli
-    - tig
-    - tree
-    - unrar
-    - vimpager
-    - wget
-
 
 #clone Spacemacs repo & create symlink for Emacs
 - name: Clone Spacemacs Git repo

@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  ignore_errors: yes
+  user: mick
+  connection: local
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - ansible_setup_my_mac

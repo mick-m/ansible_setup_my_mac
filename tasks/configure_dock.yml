@@ -2,45 +2,10 @@
 - name: Remove all crap from Dock
   shell: dockutil --remove '{{ item }}'
   ignore_errors: true
-  with_items:
-    - Launchpad
-    - Mail
-    - Safari
-    - Contacts
-    - Notes
-    - Reminders
-    - Maps
-    - Photos
-    - Messages
-    - FaceTime
-    - iTunes
-    - iBooks
-    - App Store
-    - System Preferences
-    - Calendar
-
+  with_items: ['{{ dockitems_to_remove }}']
 
 - name: Add items to Dock
   shell: >
     dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
-    && dockutil --move '{{ item.name }}' --position {{ item.pos }}
-  with_items:
-    - name: Mail
-      path: "/Applications/Mail.app"
-      pos: 1
-    - name: Atom
-      path: "/Applications/Atom.app"
-      pos: 2
-    - name: Visual Studio Code
-      path: "/Applications/Visual Studio Code.app"
-      pos: 3
-    - name: Vivaldi
-      path: /Applications/Vivaldi.app
-      pos: 4
-    - name: iTerm
-      path: /Applications/iTerm.app
-      pos: 5
-    - name: Slack
-      path: /Applications/Slack.app
-      pos: 6
-
+    && dockutil --move '{{ item.name }}' --position '{{ item.pos }}'
+  with_items: ['{{ dockitems_to_persist }}']
