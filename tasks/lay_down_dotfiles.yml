@@ -1,8 +1,13 @@
 ---
-- name: Fetch my dotfiles from GitHub
+- name: Source dotfiles from GitHub (1/2)
   git:
     repo: 'https://github.com/mick-m/boxconfig.git'
     dest: /tmp/dotfiles
+
+- name: Source dotfiles from GitHub (2/2)
+  file:
+    path: /tmp/dotfiles/.git
+    state: absent
 
 - name: Place dotfiles in my home directory
   copy:
