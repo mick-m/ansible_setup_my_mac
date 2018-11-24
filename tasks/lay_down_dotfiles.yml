@@ -1,0 +1,15 @@
+---
+- name: Fetch my dotfiles from GitHub
+  git:
+    repo: 'https://github.com/mick-m/boxconfig.git'
+    dest: /tmp/dotfiles
+
+- name: Place dotfiles in my home directory
+  copy:
+    src: /tmp/dotfiles/
+    dest: ~/
+
+- name: Cleanup temporary dotfiles directory
+  file:
+    path: /tmp/dotfiles/
+    state: absent

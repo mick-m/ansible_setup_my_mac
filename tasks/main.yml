@@ -3,3 +3,4 @@
 - import_tasks: brew_install.yml
 - import_tasks: brew_cask_install.yml
 - import_tasks: configure_dock.yml
+- import_tasks: lay_down_dotfiles.yml
