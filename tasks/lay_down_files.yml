@@ -1,4 +1,10 @@
 ---
+
+- name: Place encfslogin file in home directory
+  copy:
+    src: encfslogin.sh
+    dest: ~/encfslogin.sh
+
 - name: Source dotfiles from GitHub (1/2)
   git:
     repo: 'https://github.com/mick-m/boxconfig.git'

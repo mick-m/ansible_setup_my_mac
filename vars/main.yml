@@ -26,6 +26,7 @@ homebrew_cask_apps:
   - evernote
   - iterm2
   - keepassx
+  - osxfuse
   - slack
   - slate
   - transmission
@@ -70,3 +71,6 @@ dockitems_to_persist:
   - name: Slack
     path: /Applications/Slack.app
     pos: 6
+  - name: KeePassX
+    path: /Applications/KeePassX.app
+    pos: 7

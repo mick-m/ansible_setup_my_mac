@@ -2,5 +2,5 @@
 # tasks file for ansible_setup_my_mac
 - import_tasks: brew_install.yml
 - import_tasks: brew_cask_install.yml
-- import_tasks: lay_down_dotfiles.yml
+- import_tasks: lay_down_files.yml
 - import_tasks: configure_dock.yml
